@@ -1,8 +1,4 @@
-html {
-    /* background: url('./IMG_3185.jpeg') center;
-    background-size: cover; */
 
-}
 body {
     background: pink;
     color: black; 
@@ -12,14 +8,16 @@ body {
 
 #title {
     text-align: center;
-    font-size: 120px;
+    font-size: 150px;
 }
 .desc {
-    font-size: 80px;
+    font-size: 100px;
     text-align: center;
 }
 #choice {
-    font-size: 90px;
+    opacity: 0;
+    font-size: 120px;
+    font-weight: bold;
     transform: translateY(-100px);
     text-align: center;
 }
@@ -96,7 +94,7 @@ span {
 
 #choice.drop-down {
     animation-name: drop-down;
-    animation-duration: 300ms;
+    animation-duration: 400ms;
     animation-timing-function: cubic-bezier(0.58, 0.3, 0.49, 1.39);
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -135,4 +133,8 @@ span {
 }
 span.skip {
     transition: all 0.1s cubic-bezier(0, 1.4, 0.45, 0.89);
+}
+
+.disappear {
+    display: none;
 }
