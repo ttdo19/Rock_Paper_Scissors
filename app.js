@@ -6,16 +6,9 @@ let computerScore = 0;
 let playerScore = 0; 
 
 let buttons = document.querySelectorAll(".button"); 
-let body = document.querySelector("body"); 
+
+let body = document.querySelector("#body"); 
 let main = document.querySelector("main"); 
-
-body.addEventListener("click", skipAnime()); 
-body.addEventListener("mouse", skipAnime()); 
-
-function skipAnime() {
-    const spans = document.querySelectorAll("span"); 
-    spans.forEach((span) => span.classList.add("skip")); 
-}
 
 function fadeIn() {
     let text = document.querySelector(".animate"); 
@@ -43,6 +36,9 @@ function fadeIn() {
 
 
 function beginAnimation() {
+    const skipButton = document.querySelector(".skipBtn"); 
+    skipButton.addEventListener("click", skipAnime); 
+
     fadeIn();
     const desc1 = document.querySelector("#desc1");
     const desc2 = document.querySelector("#desc2");
@@ -74,6 +70,8 @@ function beginAnimation() {
             desc3Span[desc3Span.length - 1].ontransitionend = () => {
                 const choice = document.querySelector("#choice"); 
                 choice.classList.add("drop-down"); 
+                const skipBtn = document.querySelector(".skipBtn"); 
+                skipBtn.classList.add("disappear"); 
                 choice.addEventListener("animationend", () => {
                     const game = document.querySelector("#game-container"); 
                     setTimeout((() => game.classList.add("fade-in")), 300); 
@@ -81,7 +79,86 @@ function beginAnimation() {
             }
         }
     }
-
-    
 }
+
+function getComputerChoice() {
+    let randomNum = Math.floor(Math.random() * 3); 
+    if (randomNum === 1) return "rock"; 
+    else if (randomNum === 2) return "paper"; 
+    else return "scissors"; 
+}
+
+function skipAnime() {
+    desc1.classList.add("disappear"); 
+    desc1.classList.remove("animate"); 
+    desc2.classList.remove("animate"); 
+    desc2.classList.add("disappear"); 
+    desc3.classList.remove("disappear"); 
+    const choice = document.querySelector("#choice"); 
+    choice.classList.add("drop-down"); 
+    const skipBtn = document.querySelector(".skipBtn"); 
+    skipBtn.classList.add("disappear"); 
+    choice.addEventListener("animationend", () => {
+        const game = document.querySelector("#game-container"); 
+        setTimeout((() => game.classList.add("fade-in")), 300); 
+    })
+}
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const img = button.querySelector("img"); 
+        playerSelection = img.alt.toLowerCase(); 
+        computerSelection = getComputerChoice(); 
+        playRound(playerSelection, computerSelection); 
+    })
+})
+
+function playRound(playerSelection, computerSelection) {
+    console.log(playerSelection); 
+    console.log(computerSelection); 
+    //Tie
+    if (playerSelection === computerSelection) {
+        playerScore++; 
+        computerScore++; 
+        displayResult("It's a tie!"); 
+    } else if ((playerSelection === "rock" && computerSelection === "paper") 
+        || (playerSelection === "paper" && computerSelection === "scissors") 
+        || (playerSelection === "scissors"  && computerSelection === "rock")) {
+            //User loses
+            computerScore++; 
+            displayResult("You Lost! " + computerSelection[0].toUpperCase() + computerSelection.slice(1) + " beats " + playerSelection[0].toUpperCase() + playerSelection.slice(1)) ; 
+    } else {
+        //User wins
+        playerScore++; 
+        displayResult("You Won! " + playerSelection[0].toUpperCase() + playerSelection.slice(1) + " beats " + computerSelection[0].toUpperCase() + computerSelection.slice(1)) ; 
+    }
+    updateScore("#kyle-score"); 
+    updateScore("#trang-score"); 
+
+  }
+   
+function updateScore(person) {
+    const scoreCtn = document.querySelector(person); 
+    scoreCtn.animate([{opacity: 0}, {opacity: 1}], {
+        duration: 300,
+        delay: 0, 
+        fill: "forwards",  
+        iterations: 1, 
+        easing: "ease-in", 
+    }); 
+    scoreCtn.textContent = (person === "#kyle-score") ? playerScore : computerScore;  
+}
+
+function displayResult(message) {
+    const resultCtn = document.querySelector("#results-container"); 
+    resultCtn.animate([{opacity: 0}, {opacity: 1}], {
+        duration: 300,
+        delay: 0, 
+        fill: "forwards",  
+        iterations: 1, 
+        easing: "ease-out", 
+    })
+    resultCtn.textContent = message; 
+}
+
 

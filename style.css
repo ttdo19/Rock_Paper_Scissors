@@ -43,15 +43,19 @@ body {
     transform: scale(1.2);
     box-shadow: 0 0 20px 1px;
 }
+#results-container,
 #score-container,
 #score-label {
     display: flex;
     justify-content: center;
-    margin: 0 30px;
+    font-size: 70px;
+    padding: 20px 0;
+}
+#score-label {
+    height: 150px; 
 }
 .score,
 .label {
-    font-size: 70px;
     padding: 0 50px; 
 }
 
@@ -134,7 +138,27 @@ span {
 span.skip {
     transition: all 0.1s cubic-bezier(0, 1.4, 0.45, 0.89);
 }
-
+.skipBtn.disappear,
 .disappear {
     display: none;
+}
+
+.skipBtn {
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    font-size: 40px;
+    height: 75px;
+    width: 275px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 0 20px 1px;
+}
+
+.skipBtn:hover{
+    transform: scale(1.2);
 }
