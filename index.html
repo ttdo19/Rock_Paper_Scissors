@@ -2,9 +2,42 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <title>Rock Paper Scissors</title>
+  <script src="rock_paper_scissors.js"defer></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Roboto&family=Roboto+Serif:opsz@8..144&display=swap" rel="stylesheet">
 </head>
 <body>
-  <script src="rock_paper_scissors.js"></script>
+    <main id="main-container"> 
+      <h1 id="title">Hi my best friend, Kyle!</h1>
+      <p class="desc animate" id="desc1">Since you're always arguing about whether you love me more...</p>
+      <p class="desc disappear" id="desc2">Let's see if you love me more today by winning the rock paper scissors game!</p>
+      <p class="desc disappear" id="desc3">Don't worry, you'll have 5 trials☺️</p>
+      <p id="choice">Now, make your choice!</p>
+      <div id="game-container"> 
+        <div id="button-container">
+            <div id="rock" class="button">
+                <img src="icons8-hand-rock-100.png" alt = "Rock" />
+            </div>
+            <div id="paper" class="button">
+                <img src="icons8-hand-100.png" alt = "Paper" />
+            </div>
+            <div id="scissors" class="button">
+                <img src="icons8-hand-scissors-100.png" alt = "Scissors" />
+            </div>
+        </div>
+        <div id="score-label">
+            <p class="label">Kyle</p>
+            <p class="label">Trang</p>
+        </div>
+        <div id="score-container">
+            <div id="kyle-score" class="score">0</div>
+            <div id="trang-score" class="score">0</div>
+        </div>
+        <div id="results-container"></div>
+      </div>
+    </main>
 </body>
 </html>
