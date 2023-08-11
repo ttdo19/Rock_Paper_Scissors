@@ -35,8 +35,7 @@ body {
 }
 .button {
     width: 200px;
-    height: 200px; 
-
+    aspect-ratio: 1;
     border: 1px solid black; 
     margin: 2% 2%; 
     display: flex;

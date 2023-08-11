@@ -177,7 +177,7 @@ function displayFinal() {
     })
     if (playerScore === 5) {
         //player wins
-        finalResult.textContent = "Congratulation🎉 You have beaten the machines and saved the planet!"; 
+        finalResult.textContent = "Great job🎉 You have beaten the machines and saved the planet!"; 
         const animation = document.querySelector("#win"); 
         animation.classList.remove("disappear"); 
     } else {
