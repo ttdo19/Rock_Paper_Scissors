@@ -4,7 +4,6 @@ body {
     color: black; 
     margin: 0;
     font-family: 'Parisienne', cursive;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
