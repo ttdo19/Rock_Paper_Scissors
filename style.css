@@ -3,6 +3,7 @@ body {
     background: pink;
     color: black; 
     margin: 1%;
+    padding: 1%;
     font-family: 'Parisienne', cursive;
     justify-content: center;
 }
@@ -160,7 +161,7 @@ lottie-player.disappear,
     bottom: 7%;
     right: 5%;
     font-size: 125%;
-    padding: 2%; 
+    padding: 1%; 
     border: 1px solid black;
     transition: all 0.4s ease;
     cursor: pointer;
@@ -181,5 +182,5 @@ lottie-player.disappear,
     height: 20%;
 }
 lottie-player {
-    margin: 0 auto;
+    margin: 1% auto;
 }
