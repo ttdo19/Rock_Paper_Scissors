@@ -4,6 +4,9 @@ body {
     color: black; 
     margin: 0;
     font-family: 'Parisienne', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #title {
@@ -35,7 +38,7 @@ body {
     /* width: 200px;
     height: 200px;  */
     padding: 2%; 
-    width: 10%; 
+    width: 7%; 
     border: 1px solid black; 
     margin: 1% 1%; 
     display: flex;
@@ -158,7 +161,7 @@ lottie-player.disappear,
     position: absolute;
     bottom: 7%;
     right: 5%;
-    font-size: 150%;
+    font-size: 125%;
     height: 7%;
     width: 15%;
     border: 1px solid black;
