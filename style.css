@@ -2,11 +2,9 @@
 body {
     background: pink;
     color: black; 
-    margin: 0;
+    margin: 1%;
     font-family: 'Parisienne', cursive;
-    display: flexbox;
     justify-content: center;
-    align-items: center;
 }
 
 #title {
@@ -37,8 +35,8 @@ body {
 .button {
     /* width: 200px;
     height: 200px;  */
-    padding: 2%; 
-    width: 10%; 
+    padding: 3%; 
+    width: 7%; 
     border: 1px solid black; 
     margin: 1% 1%; 
     display: flex;
@@ -162,12 +160,8 @@ lottie-player.disappear,
     bottom: 7%;
     right: 5%;
     font-size: 125%;
-    height: 7%;
-    width: 15%;
+    padding: 2%; 
     border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: all 0.4s ease;
     cursor: pointer;
     box-shadow: 0 0 20px 1px;
@@ -181,7 +175,7 @@ lottie-player.disappear,
     display: flex;
     justify-content: center;
     align-items: center;
-    /* font-size: 50px; */
+    margin: 1%; 
     font-size: 300%;
     transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
     height: 20%;
