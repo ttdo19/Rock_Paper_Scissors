@@ -4,6 +4,9 @@ body {
     color: black; 
     margin: 0;
     font-family: 'Parisienne', cursive;
+}
+main {
+    display: flexbox;
     justify-content: center;
     align-items: center;
 }
@@ -37,7 +40,7 @@ body {
     /* width: 200px;
     height: 200px;  */
     padding: 2%; 
-    width: 7%; 
+    width: 10%; 
     border: 1px solid black; 
     margin: 1% 1%; 
     display: flex;
@@ -46,7 +49,7 @@ body {
     transition: all 0.4s ease;
 }
 .button img {
-    width: 120%; 
+    width: 80%; 
 }
 .button:hover {
     cursor: pointer;
