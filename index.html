@@ -5,6 +5,7 @@
   <title>Rock Paper Scissors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="app.js"defer></script>
+  <script src="Animation - 1691772349498.json"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +14,10 @@
 </head>
 <body>
     <main id="main-container"> 
-      <h1 id="title">Hi my best friend, Kyle!</h1>
-      <p class="desc animate" id="desc1">Since you're always arguing about whether you love me more...</p>
-      <p class="desc disappear" id="desc2">Let's see if you love me more today by winning the rock paper scissors game!</p>
-      <p class="desc disappear" id="desc3">Don't worry, you'll get to play 5 times❤️</p>
+      <h1 id="title">Rock Paper Scissors</h1>
+      <p class="desc animate" id="desc1">Machines are about to take over this planet...</p>
+      <p class="desc disappear" id="desc2">Let's see if you could beat the machines by winning this game!</p>
+      <p class="desc disappear" id="desc3">Don't worry, you'll have at least 5 chances❤️</p>
       <p id="choice">Make your choice!</p>
       <div class="skipBtn">Skip Animation</div>
       
@@ -33,18 +34,20 @@
             </div>
         </div>
         <div id="score-label">
-            <p class="label">Kyle</p>
-            <p class="label">Trang</p>
+            <p class="label">You</p>
+            <p class="label">Computer</p>
         </div>
         <div id="score-container">
-            <div id="kyle-score" class="score">0</div>
-            <div id="trang-score" class="score">0</div>
+            <div id="player-score" class="score">0</div>
+            <div id="computer-score" class="score">0</div>
         </div>
         <div id="results-container"></div>
       </div>
 
       <div class="final-result disappear"></div>
-      <lottie-player class="disappear" src="https://lottie.host/a8785ace-4f24-4ee3-b6d2-791636ea0b61/pWLnF5qv7g.json" background="transparent"  speed="2"  style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+      <lottie-player class="winning disappear" src="https://lottie.host/dd8a7cf1-4e32-4c3e-99db-90fb0d59c7cb/2NIAQBgB2S.json" background="transparent"  speed="2"  style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+      <lottie-player class="losing disappear" src="https://lottie.host/431641f3-8214-4231-bc1d-5a06571294db/9BZeQIcP2j.json" background="transparent"  speed="2"  style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+      <div id="animation-container"></div>
     </main>
 </body>
 </html>

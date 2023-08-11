@@ -132,8 +132,8 @@ function playRound(playerSelection, computerSelection) {
         playerScore++; 
         displayResult("You Won! " + playerSelection[0].toUpperCase() + playerSelection.slice(1) + " beats " + computerSelection[0].toUpperCase() + computerSelection.slice(1)) ; 
     }
-    updateScore("#kyle-score"); 
-    updateScore("#trang-score"); 
+    updateScore("#player-score"); 
+    updateScore("#computer-score"); 
     if (playerScore === 5 || computerScore === 5) displayFinal(); 
 
   }
@@ -147,7 +147,7 @@ function updateScore(person) {
         iterations: 1, 
         easing: "ease-in", 
     }); 
-    scoreCtn.textContent = (person === "#kyle-score") ? playerScore : computerScore;  
+    scoreCtn.textContent = (person === "#player-score") ? playerScore : computerScore;  
 }
 
 function displayResult(message) {
@@ -176,9 +176,19 @@ function displayFinal() {
         iterations: 1, 
         easing: "ease-in", 
     })
-    finalResult.textContent = (playerScore === 5) ? "I guess you love me more today then😂❤️" : "Sorry best friend! I love you more today😘"; 
-    const animation = document.querySelector("lottie-player"); 
-    animation.classList.remove("disappear"); 
+    finalResult.textContent = (playerScore === 5) ? "Congratulation🎉 You have beaten the machines and saved the planet!" : "Oh no! The machines have taken over the planet!"; 
+    const animation = document.querySelectorAll("lottie-player"); 
+    (playerScore === 5) ? animation[0].classList.remove("disappear") : animation[1].classList.remove("disappear"); 
 }
+
+var animation = bodymovin.loadAnimation({
+    // animationData: { /* ... */ },
+    container: document.getElementById('animation-container'), // required
+    path: 'Animation - 1691772349498.json', // required
+    renderer: 'svg', // required
+    loop: true, // optional
+    autoplay: true, // optional
+    name: "Demo Animation", // optional
+  });
 
 
