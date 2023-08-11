@@ -4,8 +4,6 @@ body {
     color: black; 
     margin: 0;
     font-family: 'Parisienne', cursive;
-}
-main {
     display: flexbox;
     justify-content: center;
     align-items: center;
