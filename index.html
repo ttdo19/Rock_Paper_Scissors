@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Rock Paper Scissors</title>
   <script src="app.js"defer></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +16,7 @@
       <p class="desc animate" id="desc1">Since you're always arguing about whether you love me more...</p>
       <p class="desc disappear" id="desc2">Let's see if you love me more today by winning the rock paper scissors game!</p>
       <p class="desc disappear" id="desc3">Don't worry, you'll get to play 5 games❤️</p>
-      <p id="choice">Now, make your choice!</p>
+      <p id="choice">Make your choice!</p>
       <div class="skipBtn">Skip Animation</div>
       
       <div id="game-container"> 
@@ -40,6 +41,9 @@
         </div>
         <div id="results-container"></div>
       </div>
+
+      <div class="final-result disappear"></div>
+      <lottie-player class="disappear" src="https://lottie.host/a8785ace-4f24-4ee3-b6d2-791636ea0b61/pWLnF5qv7g.json" background="transparent"  speed="2"  style="width: 1200px; height: 1200px;" loop autoplay></lottie-player>
     </main>
 </body>
 </html>

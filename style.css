@@ -139,6 +139,9 @@ span.skip {
     transition: all 0.1s cubic-bezier(0, 1.4, 0.45, 0.89);
 }
 .skipBtn.disappear,
+.final-result.disappear,
+main.disappear,
+lottie-player.disappear,
 .disappear {
     display: none;
 }
@@ -161,4 +164,20 @@ span.skip {
 
 .skipBtn:hover{
     transform: scale(1.2);
+}
+
+.final-result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150px;
+    /* background-color: lightgray; */
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    height: 300px;
+}
+lottie-player {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin: 0 auto;
 }

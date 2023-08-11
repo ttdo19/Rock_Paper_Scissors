@@ -134,6 +134,7 @@ function playRound(playerSelection, computerSelection) {
     }
     updateScore("#kyle-score"); 
     updateScore("#trang-score"); 
+    if (playerScore === 5 || computerScore === 5) displayFinal(); 
 
   }
    
@@ -159,6 +160,25 @@ function displayResult(message) {
         easing: "ease-out", 
     })
     resultCtn.textContent = message; 
+}
+
+function displayFinal() {
+    const finalResult = document.querySelector(".final-result"); 
+    finalResult.classList.remove("disappear"); 
+    desc3.classList.add("disappear"); 
+    choice.classList.add("disappear"); 
+    const gameCtn = document.querySelector("#game-container"); 
+    gameCtn.classList.add("disappear"); 
+    finalResult.animate([{opacity: 0}, {opacity: 1}], {
+        duration: 300, 
+        delay: 0, 
+        fill: "forwards", 
+        iterations: 1, 
+        easing: "ease-in", 
+    })
+    finalResult.textContent = (playerScore === 5) ? "I guess you love me more today then😂❤️" : "Sorry best friend! I love you more today😘"; 
+    const animation = document.querySelector("lottie-player"); 
+    animation.classList.remove("disappear"); 
 }
 
 
