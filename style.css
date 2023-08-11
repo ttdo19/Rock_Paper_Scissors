@@ -34,10 +34,9 @@ body {
     justify-content: center; 
 }
 .button {
-    /* width: 200px;
-    height: 200px;  */
-    padding: 4%; 
-    width: 15%; 
+    width: 200px;
+    height: 200px; 
+
     border: 1px solid black; 
     margin: 2% 2%; 
     display: flex;
@@ -45,9 +44,7 @@ body {
     align-items: center;
     transition: all 0.4s ease;
 }
-.button img {
-    width: 100%; 
-}
+
 .button:hover {
     cursor: pointer;
     transform: scale(1.2);
@@ -151,7 +148,8 @@ span.skip {
 .skipBtn.disappear,
 .final-result.disappear,
 main.disappear,
-lottie-player.disappear,
+.win.disappear,
+.lose.disappear,
 .disappear {
     display: none;
 }

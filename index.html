@@ -5,8 +5,7 @@
   <title>Rock Paper Scissors</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="app.js"defer></script>
-  <script src="Animation - 1691772349498.json"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"defer></script>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,13 +23,13 @@
       <div id="game-container"> 
         <div id="button-container">
             <div id="rock" class="button">
-                <img src="icons8-hand-rock-100.png" alt = "Rock" />
+                <lottie-player src="https://raw.githubusercontent.com/ttdo19/Rock_Paper_Scissors/rps-main/Rock.json?token=GHSAT0AAAAAACF7ZCHR52T5WKGFHOEBRV7SZGWR76Q" background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
             <div id="paper" class="button">
-                <img src="icons8-hand-100.png" alt = "Paper" />
+                <lottie-player src="https://raw.githubusercontent.com/ttdo19/Rock_Paper_Scissors/rps-main/Paper.json?token=GHSAT0AAAAAACF7ZCHQIADMGCKV7KSEVI34ZGWR4VA" background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
             <div id="scissors" class="button">
-                <img src="icons8-hand-scissors-100.png" alt = "Scissors" />
+                <lottie-player src="https://raw.githubusercontent.com/ttdo19/Rock_Paper_Scissors/rps-main/Scissors.json?token=GHSAT0AAAAAACF7ZCHQKX62FABP5LL3DQVAZGWSAMA" background="transparent"  speed="1"  style="width: 100%; height: 100%;" loop autoplay></lottie-player>
             </div>
         </div>
         <div id="score-label">
@@ -45,8 +44,8 @@
       </div>
 
       <div class="final-result disappear"></div>
-      <lottie-player class="winning disappear" src="https://lottie.host/dd8a7cf1-4e32-4c3e-99db-90fb0d59c7cb/2NIAQBgB2S.json" background="transparent"  speed="2"  style="width: 400px; height: 400px;" loop autoplay></lottie-player>
-      <lottie-player class="losing disappear" src="https://lottie.host/431641f3-8214-4231-bc1d-5a06571294db/9BZeQIcP2j.json" background="transparent"  speed="2"  style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+      <lottie-player id="win" class="disappear" src="https://lottie.host/dd8a7cf1-4e32-4c3e-99db-90fb0d59c7cb/2NIAQBgB2S.json" background="transparent"  speed="2"  style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+      <lottie-player id = "lose" class="disappear" src="https://lottie.host/431641f3-8214-4231-bc1d-5a06571294db/9BZeQIcP2j.json" background="transparent"  speed="2"  style="width: 400px; height: 400px;" loop autoplay></lottie-player>
       <div id="animation-container"></div>
     </main>
 </body>

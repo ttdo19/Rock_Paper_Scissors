@@ -106,8 +106,7 @@ function skipAnime() {
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        const img = button.querySelector("img"); 
-        playerSelection = img.alt.toLowerCase(); 
+        playerSelection = button.id.toLowerCase(); 
         computerSelection = getComputerChoice(); 
         playRound(playerSelection, computerSelection); 
     })
@@ -176,19 +175,17 @@ function displayFinal() {
         iterations: 1, 
         easing: "ease-in", 
     })
-    finalResult.textContent = (playerScore === 5) ? "Congratulation🎉 You have beaten the machines and saved the planet!" : "Oh no! The machines have taken over the planet!"; 
-    const animation = document.querySelectorAll("lottie-player"); 
-    (playerScore === 5) ? animation[0].classList.remove("disappear") : animation[1].classList.remove("disappear"); 
+    if (playerScore === 5) {
+        //player wins
+        finalResult.textContent = "Congratulation🎉 You have beaten the machines and saved the planet!"; 
+        const animation = document.querySelector("#win"); 
+        animation.classList.remove("disappear"); 
+    } else {
+        //computer wins
+        finalResult.textContent = "Oh no! The machines have taken over the planet!"; 
+        const animation = document.querySelector("#lose"); 
+        animation.classList.remove("disappear"); 
+    }
 }
-
-var animation = bodymovin.loadAnimation({
-    // animationData: { /* ... */ },
-    container: document.getElementById('animation-container'), // required
-    path: 'Animation - 1691772349498.json', // required
-    renderer: 'svg', // required
-    loop: true, // optional
-    autoplay: true, // optional
-    name: "Demo Animation", // optional
-  });
 
 
