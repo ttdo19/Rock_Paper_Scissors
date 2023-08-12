@@ -2,4 +2,4 @@
 
 Game Demo
 
-![](http://g.recordit.co/M7NmhfgPce.gif)
+![](http://g.recordit.co/dJ44bvAZ50.gif)
