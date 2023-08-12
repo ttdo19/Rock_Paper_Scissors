@@ -1,14 +1,25 @@
-window.onload = beginAnimation(); 
-
 let computerSelection; 
 let playerSelection; 
 let computerScore = 0; 
 let playerScore = 0; 
 
-let buttons = document.querySelectorAll(".button"); 
+const buttons = document.querySelectorAll(".button"); 
+const body = document.querySelector("#body"); 
+const main = document.querySelector("main"); 
+const resetBtn = document.querySelector(".reset-button"); 
+const finalResult = document.querySelector(".final-result"); 
+const losingAnimation = document.querySelector("#lose"); 
+const winningAnimation = document.querySelector("#win"); 
+const game = document.querySelector("#game-container"); 
+const choice = document.querySelector("#choice"); 
+const skipButton = document.querySelector(".skipBtn"); 
+const desc1 = document.querySelector("#desc1");
+const desc2 = document.querySelector("#desc2");
+const desc3 = document.querySelector("#desc3"); 
+const resultCtn = document.querySelector("#results-container"); 
 
-let body = document.querySelector("#body"); 
-let main = document.querySelector("main"); 
+
+window.onload = beginAnimation(); 
 
 function fadeIn() {
     let text = document.querySelector(".animate"); 
@@ -36,13 +47,10 @@ function fadeIn() {
 
 
 function beginAnimation() {
-    const skipButton = document.querySelector(".skipBtn"); 
     skipButton.addEventListener("click", skipAnime); 
 
     fadeIn();
-    const desc1 = document.querySelector("#desc1");
-    const desc2 = document.querySelector("#desc2");
-    const desc3 = document.querySelector("#desc3"); 
+    
     //need to turn nodelist of spans into an array so that we can access last value for ontransitionend
     let desc1Span = desc1.querySelectorAll("span"); 
     desc1Span = Array.from(desc1Span); 
@@ -68,12 +76,9 @@ function beginAnimation() {
             desc3Span = Array.from(desc3Span); 
 
             desc3Span[desc3Span.length - 1].ontransitionend = () => {
-                const choice = document.querySelector("#choice"); 
                 choice.classList.add("drop-down"); 
-                const skipBtn = document.querySelector(".skipBtn"); 
-                skipBtn.classList.add("disappear"); 
+                skipButton.classList.add("disappear"); 
                 choice.addEventListener("animationend", () => {
-                    const game = document.querySelector("#game-container"); 
                     setTimeout((() => game.classList.add("fade-in")), 300); 
                 })
             }
@@ -94,12 +99,10 @@ function skipAnime() {
     desc2.classList.remove("animate"); 
     desc2.classList.add("disappear"); 
     desc3.classList.remove("disappear"); 
-    const choice = document.querySelector("#choice"); 
+    
     choice.classList.add("drop-down"); 
-    const skipBtn = document.querySelector(".skipBtn"); 
-    skipBtn.classList.add("disappear"); 
+    skipButton.classList.add("disappear"); 
     choice.addEventListener("animationend", () => {
-        const game = document.querySelector("#game-container"); 
         setTimeout((() => game.classList.add("fade-in")), 300); 
     })
 }
@@ -150,7 +153,6 @@ function updateScore(person) {
 }
 
 function displayResult(message) {
-    const resultCtn = document.querySelector("#results-container"); 
     resultCtn.animate([{opacity: 0}, {opacity: 1}], {
         duration: 300,
         delay: 0, 
@@ -162,12 +164,11 @@ function displayResult(message) {
 }
 
 function displayFinal() {
-    const finalResult = document.querySelector(".final-result"); 
+    resetBtn.addEventListener("click", reset); 
     finalResult.classList.remove("disappear"); 
     desc3.classList.add("disappear"); 
     choice.classList.add("disappear"); 
-    const gameCtn = document.querySelector("#game-container"); 
-    gameCtn.classList.add("disappear"); 
+    game.classList.add("disappear"); 
     finalResult.animate([{opacity: 0}, {opacity: 1}], {
         duration: 300, 
         delay: 0, 
@@ -178,14 +179,34 @@ function displayFinal() {
     if (playerScore === 5) {
         //player wins
         finalResult.textContent = "Great job🎉 You have beaten the machines and saved the planet!"; 
-        const animation = document.querySelector("#win"); 
-        animation.classList.remove("disappear"); 
+        winningAnimation.classList.remove("disappear"); 
+        resetBtn.textContent = "Play Again";
     } else {
         //computer wins
         finalResult.textContent = "Oh no! The machines have taken over the planet!"; 
-        const animation = document.querySelector("#lose"); 
-        animation.classList.remove("disappear"); 
+        losingAnimation.classList.remove("disappear"); 
+        resetBtn.textContent = "Try Again";
     }
+    resetBtn.classList.remove("disappear"); 
+}
+
+function reset() {
+    computerScore = 0; 
+    playerScore = 0; 
+    updateScore("#player-score"); 
+    updateScore("#computer-score"); 
+
+    finalResult.classList.add("disappear"); 
+    desc3.classList.remove("disappear"); 
+    desc3.classList.add("animate"); 
+    choice.classList.remove("disappear"); 
+    choice.classList.add("drop-down"); 
+    winningAnimation.classList.add("disappear"); 
+    losingAnimation.classList.add("disappear"); 
+    resetBtn.classList.add("disappear"); 
+    game.classList.add("fade-in");
+    game.classList.remove("disappear"); 
+    fadeIn(); 
 }
 
 

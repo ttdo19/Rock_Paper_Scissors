@@ -33,6 +33,7 @@ body {
     display: flex;
     justify-content: center; 
 }
+
 .button {
     width: 200px;
     aspect-ratio: 1;
@@ -141,13 +142,12 @@ span {
         pointer-events: all;
     }
 }
-span.skip {
-    transition: all 0.1s cubic-bezier(0, 1.4, 0.45, 0.89);
-}
+
 .skipBtn.disappear,
 .final-result.disappear,
 main.disappear,
 .win.disappear,
+.reset-button.disappear,
 .lose.disappear,
 .disappear {
     display: none;
@@ -159,12 +159,25 @@ main.disappear,
     right: 5%;
     font-size: 125%;
     padding: 1%; 
+    width: fit-content;
     border: 1px solid black;
     transition: all 0.4s ease;
     cursor: pointer;
     box-shadow: 0 0 20px 1px;
 }
 
+.reset-button {
+    margin: 2% auto; 
+    font-size: 125%;
+    padding: 1%; 
+    width: fit-content;
+    border: 1px solid black;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 0 20px 1px;
+}
+
+.reset-button:hover,
 .skipBtn:hover{
     transform: scale(1.2);
 }
